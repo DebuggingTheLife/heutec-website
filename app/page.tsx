@@ -1,19 +1,20 @@
 type CardItem = {
   title: string;
   description: string;
+  href?: string;
+  image?: string;
 };
 
 type CaseStudy = {
   title: string;
   clientType: string;
-  challenge: string;
-  solution: string;
-  result: string;
+  summary: string;
+  image: string;
   imageAlt: string;
 };
 
 const navItems = [
-  { label: "Unternehmen", href: "#unternehmen" },
+  { label: "Unternehmen", href: "#vision" },
   { label: "Produkte", href: "#produkte" },
   { label: "Lösungen", href: "#loesungen" },
   { label: "Leistungen", href: "#leistungen" },
@@ -29,54 +30,84 @@ const productMenu = [
   "Solar & Außenbeleuchtung"
 ];
 
-const serviceMenu = [
-  "Lichtplanung",
-  "Projektmanagement",
-  "Installation & Montage",
-  "Finanzierung",
-  "Technische Beratung"
+const footerQuickLinks = [
+  { label: "Unternehmen", href: "#vision" },
+  { label: "Referenzen", href: "#referenzen" },
+  { label: "FAQs", href: "#faqs" },
+  { label: "Kontakt", href: "#kontakt" },
+  { label: "Impressum", href: "/impressum" },
+  { label: "Datenschutz", href: "/datenschutz" },
+  { label: "AGB", href: "/agb" }
+];
+
+const footerProductLinks = [
+  { label: "Outdoor Power Stations", href: "#produkte" },
+  { label: "LED Beleuchtung", href: "#produkte" }
+];
+
+const solutionMenu = [
+  "LED Umrüstung",
+  "Industrie & Lager",
+  "Büro & Verwaltung",
+  "Einzelhandel & Showrooms",
+  "Outdoor & Mobile Energie",
+  "Notstrom & Backup"
 ];
 
 const partnerLogos = [
-  "Retail Chain",
-  "DIY Market",
-  "Discount Retail",
-  "Industrial Client",
-  "Facility Management",
-  "Energy Partner",
-  "Logistics Partner"
+  { name: "CMCC", src: "/customer-logos/cmcc.png" },
+  { name: "Schorch", src: "/customer-logos/Schorch.png" },
+  { name: "Printus", src: "/customer-logos/printus.png" },
+  { name: "Norma", src: "/customer-logos/Norma.png" },
+  { name: "Ansmann", src: "/customer-logos/Ansmann.png" },
+  { name: "BST", src: "/customer-logos/BST.png" },
+  { name: "UTL", src: "/customer-logos/UTL.png" },
+  { name: "ABOK", src: "/customer-logos/ABOK.png" },
+  { name: "ergobag", src: "/customer-logos/ergobag.png" },
+  { name: "udoq", src: "/customer-logos/udoq.png" },
+  { name: "REWE", src: "/customer-logos/REWE.png" },
+  { name: "toom", src: "/customer-logos/toom.png" },
+  { name: "ALDI", src: "/customer-logos/ALdi.png" },
+  { name: "DHL", src: "/customer-logos/DHL.png" },
+  { name: "DSV", src: "/customer-logos/DSV.png" }
 ];
 
 const solutionCards: CardItem[] = [
   {
     title: "Outdoor Power Stations",
     description:
-      "Mobile und zuverlässige Energiespeicher für Outdoor, Baustelle, Notstrom, Camping, Events und flexible Stromversorgung."
+      "Mobile und zuverlässige Energiespeicher für Outdoor, Baustelle, Notstrom, Camping, Events und flexible Stromversorgung.",
+    image: "/solution-backgrounds/solution-card-1.jpg"
   },
   {
-    title: "LED-Beleuchtung im Großhandel",
+    title: "LED-Beleuchtung",
     description:
-      "Für Einzelhändler und Eigenmarken, direkt von sorgfältig ausgewählten Fabriken in Asien, strenge Qualitätskontrolle."
+      "Für Einzelhändler und Eigenmarken, direkt von sorgfältig ausgewählten Fabriken in Asien, strenge Qualitätskontrolle.",
+    image: "/solution-backgrounds/solution-card-2.jpg"
   },
   {
-    title: "LED Umrüstung & Energieeinsparung",
+    title: "Umrüstung & Energieeinsparung",
     description:
-      "Komplette Modernisierung bestehender Beleuchtungssysteme mit Planung, Produktauswahl und Installationskoordination."
+      "Modernisierung bestehender Systeme mit Planung, Produktauswahl und koordinierter Umsetzung.",
+    image: "/solution-backgrounds/solution-card-3.jpg"
   },
   {
     title: "Industrie & Lager",
     description:
-      "Robuste Beleuchtungslösungen für Produktion, Logistik, Werkstätten und Hochregallager."
+      "Robuste Beleuchtungslösungen für Produktion, Logistik, Werkstätten und Hochregallager.",
+    image: "/solution-backgrounds/solution-card-4.jpg"
   },
   {
     title: "Einzelhandel & Showrooms",
     description:
-      "Lichtlösungen für Verkaufsflächen, Warenpräsentation, Atmosphäre und Energieeffizienz."
+      "Lichtlösungen für Verkaufsflächen, Warenpräsentation, Atmosphäre und Energieeffizienz.",
+    image: "/solution-backgrounds/solution-card-5.jpg"
   },
   {
     title: "Büro & Verwaltung",
     description:
-      "Blendarmes, effizientes Licht für moderne Arbeitsplätze und bessere Arbeitsbedingungen."
+      "Blendarmes, effizientes Licht für moderne Arbeitsplätze und bessere Arbeitsbedingungen.",
+    image: "/solution-backgrounds/solution-card-6.jpg"
   }
 ];
 
@@ -91,6 +122,7 @@ const productCategories = [
       "Mobile und stationäre Anwendung",
       "Für Freizeit, Gewerbe, Backup und Energieunabhängigkeit"
     ],
+    image: "/solution-backgrounds/power-stations.jpg",
     imageAlt: "Bildplatzhalter für Outdoor Power Stations und portable Energiespeicher"
   },
   {
@@ -103,15 +135,28 @@ const productCategories = [
       "Moderne Designs und flexible Sortimente",
       "Geeignet für Retail- und Projektgeschäft"
     ],
+    image: "/solution-backgrounds/LED light.png",
     imageAlt: "Bildplatzhalter für moderne LED-Leuchten im gewerblichen Sortiment"
   }
 ];
 
 const benefits = [
-  "Bis zu 90% Energieeinsparung",
-  "Weniger Wartung und längere Lebensdauer",
-  "Mehr Flexibilität durch mobile Energie",
-  "Nachhaltige Produkte für moderne Unternehmen"
+  {
+    title: "Bis zu 90% Energieeinsparung",
+    icon: "/benefit-icons/1.png"
+  },
+  {
+    title: "Weniger Wartung und längere Lebensdauer",
+    icon: "/benefit-icons/2.png"
+  },
+  {
+    title: "Mehr Flexibilität durch mobile Energie",
+    icon: "/benefit-icons/3.png"
+  },
+  {
+    title: "Nachhaltige Produkte für moderne Unternehmen",
+    icon: "/benefit-icons/4.png"
+  }
 ];
 
 const retrofitSteps = [
@@ -125,75 +170,72 @@ const retrofitSteps = [
 
 const caseStudies: CaseStudy[] = [
   {
-    title: "Retail Store LED Upgrade",
-    clientType: "Einzelhandel",
-    challenge: "Hohe Stromkosten und uneinheitliche Warenpräsentation.",
-    solution: "120 LED-Panels installiert und Beleuchtung auf Verkaufszonen abgestimmt.",
-    result: "65% weniger Energieverbrauch und sichtbar bessere Produktpräsentation.",
-    imageAlt: "Bildplatzhalter für LED-Modernisierung in einem Retail Store"
+    title: "Logistics Center Rooftop PV Project",
+    clientType: "Logistikzentrum in Nordrhein-Westfalen",
+    summary:
+      "Für ein neu gebautes Logistikzentrum mit rund 30.000 m² Fläche wurde eine Dach-Photovoltaikanlage im MW-Bereich umgesetzt. Das Projekt verbindet technische Planung, saubere Installation und den Wunsch, moderne Logistik langfristig energieeffizienter und klimafreundlicher zu betreiben.",
+    image: "/solution-backgrounds/r1.png",
+    imageAlt: "Bildplatzhalter für Photovoltaikanlage auf einem Logistikzentrum"
   },
   {
-    title: "Warehouse Lighting Project",
-    clientType: "Lager & Logistik",
-    challenge: "Unzureichende Ausleuchtung in Arbeits- und Kommissionierbereichen.",
-    solution: "80 High-Bay-Leuchten ersetzt und Montageablauf koordiniert.",
-    result: "Mehr Sicherheit, bessere Sicht und geringere Wartungskosten.",
-    imageAlt: "Bildplatzhalter für LED-Hallenbeleuchtung in einem Lager"
+    title: "LED-Umrüstung Mönchengladbach",
+    clientType: "Fabrik- und Bürokomplex",
+    summary:
+      "In einem 62.000 m² großen Fabrik- und Bürokomplex wurden alte Leuchtstoffröhren, teils in jahrzehntealten Leuchten, pragmatisch durch LED-T8-Röhren ersetzt. Die Lösung spart jährlich etwa 1,5 Millionen kWh Strom und zeigt, dass sinnvolle Modernisierung nicht immer große Umbauten braucht.",
+    image: "/solution-backgrounds/r2.png",
+    imageAlt: "Bildplatzhalter für LED-Hallenbeleuchtung in einer Fabrik"
   },
   {
-    title: "Outdoor Energy Backup",
-    clientType: "Mobile Arbeit",
-    challenge: "Flexible Stromversorgung für wechselnde Einsatzorte erforderlich.",
-    solution: "Portable Power Station Lösung für mobile Arbeit und Backup bereitgestellt.",
-    result: "Zuverlässige Notstromreserve und flexible Energieversorgung vor Ort.",
-    imageAlt: "Bildplatzhalter für portable Energiespeicher im Außeneinsatz"
+    title: "Individuelle LED-Lösung für Schulrucksäcke",
+    clientType: "Deutsche Markenentwicklung",
+    summary:
+      "Für eine bekannte deutsche Schulrucksackmarke entstand eine kompakte LED-Lösung, die Kinder an dunklen Wintertagen sichtbarer macht. Neben Lichtleistung und Laufzeit standen einfache Bedienung, robuste Qualität und ein Produktnutzen im Mittelpunkt, der im Alltag wirklich hilft.",
+    image: "/solution-backgrounds/r3.png",
+    imageAlt: "Bildplatzhalter für kundenspezifische LED-Produktentwicklung"
   },
   {
-    title: "Office Lighting Modernization",
-    clientType: "Bürogebäude",
-    challenge: "Blendung, veraltete Leuchten und steigende Betriebskosten.",
-    solution: "Blendarmes Arbeitsplatzlicht geplant und bestehende Leuchten modernisiert.",
-    result: "Mehr Arbeitskomfort und niedrigere laufende Kosten.",
-    imageAlt: "Bildplatzhalter für moderne LED-Bürobeleuchtung"
+    title: "Direktlieferant großer deutscher Handelsgruppen",
+    clientType: "B2B-Großhandel",
+    summary:
+      "Als direkter B2B-Lieferant mehrerer großer deutscher Handelsgruppen kennen wir die Anforderungen des europäischen Handels: verlässliche Qualität, planbare Mengen, klare Kommunikation und dauerhafte Lieferfähigkeit. Diese Erfahrung prägt auch kleinere Projekte und neue Produktentwicklungen.",
+    image: "/solution-backgrounds/r4.png",
+    imageAlt: "Bildplatzhalter für B2B-Lieferung an Handelsgruppen"
   }
 ];
 
 const services: CardItem[] = [
   {
-    title: "Produktdesign",
-    description: "Individuelle Produktlösungen von der Idee bis zum Muster."
-  },
-  {
-    title: "Outdoor Energy Storage",
+    title: "Großhandel",
     description:
-      "Mobile Stromversorgung und Energiespeicherlösungen für Handel und Gewerbe."
+      "Zuverlässige Produktversorgung für Handel, Gewerbekunden und langfristige B2B-Partnerschaften.",
+    href: "/leistungen/grosshandel"
   },
   {
-    title: "LED-Leuchten",
-    description: "Hochwertige LED-Produkte für Gewerbekunden und Endverbraucher."
+    title: "Produktdesign",
+    description: "Individuelle Produktlösungen von der Idee bis zum Muster.",
+    href: "/leistungen/produktdesign"
   },
   {
     title: "Projektmanagement",
-    description: "Koordination von Planung, Lieferung, Installation und Abnahme."
+    description: "Koordination von Planung, Lieferung, Installation und Abnahme.",
+    href: "/leistungen/projektmanagement"
   },
   {
     title: "Installation & Montage",
     description:
-      "Umsetzung mit erfahrenen Partnern und möglichst geringer Unterbrechung des Betriebs."
+      "Umsetzung mit erfahrenen Partnern und möglichst geringer Unterbrechung des Betriebs.",
+    href: "/leistungen/installation-montage"
   },
   {
     title: "Finanzierung",
     description:
-      "Flexible Finanzierungsmodelle für Investitionen in energieeffiziente Produkte und Projekte."
-  },
-  {
-    title: "Fördermittelberatung",
-    description:
-      "Unterstützung bei der Prüfung möglicher Förderprogramme für Energieeffizienz."
+      "Flexible Finanzierungsmodelle für Investitionen in energieeffiziente Produkte und Projekte.",
+    href: "/leistungen/finanzierung"
   },
   {
     title: "After-Sales & Support",
-    description: "Technische Unterstützung, Ersatzteile und langfristige Betreuung."
+    description: "Technische Unterstützung, Ersatzteile und langfristige Betreuung.",
+    href: "/leistungen/after-sales-support"
   }
 ];
 
@@ -204,43 +246,6 @@ const whyUs = [
   "Alles aus einer Hand: Produkte, Planung, Finanzierung und Umsetzung",
   "Flexible Lösungen für Handel und Gewerbe",
   "Zuverlässige Kommunikation und langfristige Partnerschaft"
-];
-
-const processSteps = [
-  { title: "Erstgespräch", text: "Wir klären Ziele, Objekt, Sortiment oder Projektumfang." },
-  {
-    title: "Bedarfsanalyse",
-    text: "Bestehende Situation, technische Anforderungen und Einsparpotenziale werden bewertet."
-  },
-  {
-    title: "Produkt- und Projektkonzept",
-    text: "Wir entwickeln eine passende Lösung aus Produkten, Planung und Umsetzung."
-  },
-  {
-    title: "Angebot und Finanzierung",
-    text: "Sie erhalten ein klares Angebot mit möglichen Finanzierungsoptionen."
-  },
-  {
-    title: "Lieferung und Installation",
-    text: "Produkte, Logistik und Montagepartner werden koordiniert."
-  },
-  {
-    title: "Abnahme und Betreuung",
-    text: "Nach der Umsetzung begleiten wir Support, Ersatzteile und nächste Schritte."
-  }
-];
-
-const financingCards = [
-  "Projektfinanzierung",
-  "Leasingmodelle",
-  "Investitionsplanung",
-  "Förderprogramme prüfen"
-];
-
-const sustainabilityPillars = [
-  "Energieeffizienz",
-  "Langlebige Produkte",
-  "Verantwortungsvolle Lösungen"
 ];
 
 const testimonials = [
@@ -284,7 +289,8 @@ const faqs = [
   },
   {
     question: "Arbeiten Sie mit Handelsketten und Projektkunden?",
-    answer: "Ja, wir beliefern sowohl Handelspartner als auch gewerbliche Projektkunden."
+    answer:
+      "Ja, wir beliefern sowohl Handelspartner als auch gewerbliche Projektkunden."
   },
   {
     question: "Können Outdoor Power Stations auch für gewerbliche Anwendungen genutzt werden?",
@@ -310,6 +316,7 @@ function Header() {
             </span>
           </span>
         </a>
+
         <nav className="hidden items-center gap-7 text-sm font-semibold text-slate-700 lg:flex">
           {navItems.map((item) => (
             <a key={item.href} href={item.href} className="transition hover:text-signal">
@@ -317,6 +324,7 @@ function Header() {
             </a>
           ))}
         </nav>
+
         <div className="flex items-center gap-3">
           <a
             href="#kontakt"
@@ -365,11 +373,12 @@ function PlaceholderImage({ alt, className = "" }: { alt: string; className?: st
 function Hero() {
   return (
     <section className="hero-section">
-      <PlaceholderImage
-        alt="Bildplatzhalter: moderne LED-Beleuchtung in einer Gewerbe- oder Industriehalle"
-        className="absolute inset-0 min-h-full rounded-none"
+      <img
+        src="/hero-main.jpg"
+        alt="Outdoor Power Station mit Solarleuchte und Solarpanel in grüner Umgebung"
+        className="absolute inset-0 h-full w-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/82 to-ink/30" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,16,29,0.72)_0%,rgba(7,16,29,0.46)_46%,rgba(7,16,29,0.12)_100%)]" />
       <div className="section-shell relative z-10 flex min-h-[calc(100vh-96px)] items-center py-20 text-white">
         <div className="max-w-4xl">
           <p className="text-sm font-bold uppercase tracking-[0.24em] text-warm">
@@ -396,8 +405,8 @@ function Hero() {
             ))}
           </ul>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <a href="#kontakt" className="rounded-full bg-warm px-8 py-4 text-center font-bold text-ink">
-              Projektanfrage stellen
+            <a href="#referenzen" className="rounded-full bg-warm px-8 py-4 text-center font-bold text-ink">
+              Referenzen
             </a>
             <a
               href="#produkte"
@@ -422,8 +431,8 @@ function LogoCarousel() {
         <div className="logo-marquee mt-6 overflow-hidden">
           <div className="logo-track">
             {[...partnerLogos, ...partnerLogos].map((logo, index) => (
-              <div key={`${logo}-${index}`} className="logo-chip">
-                {logo}
+              <div key={`${logo.name}-${index}`} className="logo-chip">
+                <img src={logo.src} alt={`${logo.name} Logo`} />
               </div>
             ))}
           </div>
@@ -433,7 +442,17 @@ function LogoCarousel() {
   );
 }
 
-function SectionHeader({ eyebrow, title, text, centered = false }: { eyebrow?: string; title: string; text?: string; centered?: boolean }) {
+function SectionHeader({
+  eyebrow,
+  title,
+  text,
+  centered = false
+}: {
+  eyebrow?: string;
+  title: string;
+  text?: string;
+  centered?: boolean;
+}) {
   return (
     <div className={centered ? "mx-auto max-w-4xl text-center" : "max-w-4xl"}>
       {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
@@ -443,13 +462,11 @@ function SectionHeader({ eyebrow, title, text, centered = false }: { eyebrow?: s
   );
 }
 
-function SolutionCard({ item, index }: { item: CardItem; index: number }) {
+function SolutionCard({ item }: { item: CardItem }) {
   return (
-    <article className="solution-card">
-      <span className="icon-badge" aria-hidden="true">{index + 1}</span>
+    <article className="solution-card" style={{ backgroundImage: item.image ? `url(${item.image})` : undefined }}>
       <h3>{item.title}</h3>
       <p>{item.description}</p>
-      <a href="#kontakt">Mehr erfahren</a>
     </article>
   );
 }
@@ -457,7 +474,15 @@ function SolutionCard({ item, index }: { item: CardItem; index: number }) {
 function ProductCategoryCard({ product }: { product: (typeof productCategories)[number] }) {
   return (
     <article className="product-card">
-      <PlaceholderImage alt={product.imageAlt} className="min-h-[320px]" />
+      {"image" in product && product.image ? (
+        <img
+          src={product.image}
+          alt={product.imageAlt}
+          className="h-[360px] w-full rounded-[2rem] object-cover object-center"
+        />
+      ) : (
+        <PlaceholderImage alt={product.imageAlt} className="min-h-[320px]" />
+      )}
       <div className="p-7 sm:p-8">
         <h3 className="text-3xl font-semibold">{product.title}</h3>
         <p className="mt-5 leading-8 text-slate-600">{product.description}</p>
@@ -474,10 +499,10 @@ function ProductCategoryCard({ product }: { product: (typeof productCategories)[
   );
 }
 
-function BenefitCard({ title }: { title: string }) {
+function BenefitCard({ title, icon }: { title: string; icon: string }) {
   return (
     <article className="rounded-[2rem] bg-white p-7 shadow-soft">
-      <div className="mb-7 h-14 w-14 rounded-2xl bg-warm/80" />
+      <img src={icon} alt="" aria-hidden="true" className="mb-7 h-16 w-16 rounded-2xl object-cover" />
       <h3 className="text-2xl font-semibold">{title}</h3>
     </article>
   );
@@ -486,41 +511,33 @@ function BenefitCard({ title }: { title: string }) {
 function CaseStudyCard({ study }: { study: CaseStudy }) {
   return (
     <article className="case-card">
-      <PlaceholderImage alt={study.imageAlt} className="min-h-[230px] rounded-b-none" />
+      <div className="h-[230px] overflow-hidden">
+        <img
+          src={study.image}
+          alt={study.imageAlt}
+          className="h-full w-full scale-[1.08] object-cover object-center"
+        />
+      </div>
       <div className="p-7">
         <p className="text-sm font-bold uppercase tracking-[0.18em] text-signal">{study.clientType}</p>
         <h3 className="mt-3 text-2xl font-semibold">{study.title}</h3>
-        <dl className="mt-6 grid gap-4 text-sm leading-7">
-          <div><dt className="font-bold text-ink">Challenge</dt><dd className="text-slate-600">{study.challenge}</dd></div>
-          <div><dt className="font-bold text-ink">Solution</dt><dd className="text-slate-600">{study.solution}</dd></div>
-          <div><dt className="font-bold text-ink">Result</dt><dd className="text-slate-600">{study.result}</dd></div>
-        </dl>
+        <p className="mt-6 text-sm leading-7 text-slate-600">{study.summary}</p>
       </div>
     </article>
   );
 }
 
-function ServiceCard({ item, index }: { item: CardItem; index: number }) {
+function ServiceCard({ item }: { item: CardItem }) {
   return (
     <article className="service-card">
-      <span className="icon-badge" aria-hidden="true">{index + 1}</span>
       <h3>{item.title}</h3>
       <p>{item.description}</p>
+      {item.href ? (
+        <a href={item.href} className="mt-auto inline-flex pt-6 font-bold text-signal hover:text-warm">
+          Mehr erfahren
+        </a>
+      ) : null}
     </article>
-  );
-}
-
-function ProcessTimeline() {
-  return (
-    <div className="mt-14 grid gap-4 md:grid-cols-3 lg:grid-cols-6">
-      {processSteps.map((step, index) => (
-        <article key={step.title} className="process-step">
-          <span>{index + 1}</span>
-          <h3>{step.title}</h3>
-          <p>{step.text}</p>
-        </article>
-      ))}
-    </div>
   );
 }
 
@@ -547,32 +564,26 @@ function CTASection() {
         <div>
           <h2 className="text-4xl font-semibold tracking-tight">Planen Sie ein Energie- oder LED-Projekt?</h2>
           <p className="mt-4 max-w-3xl text-lg leading-8 text-ink/75">
-            Sprechen Sie mit uns über Produkte, Projektlösungen oder Finanzierungsmöglichkeiten. Wir beraten Sie gern.
+            Sprechen Sie mit uns über Produkte, Projektlösungen oder Finanzierungsmöglichkeiten.
+            Wir beraten Sie gern.
           </p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
-          <a href="#kontakt" className="rounded-full bg-ink px-8 py-4 font-bold text-white">Projektanfrage stellen</a>
-          <a href="#kontakt" className="rounded-full border border-ink px-8 py-4 font-bold text-ink">Kontakt aufnehmen</a>
+          <a href="#kontakt" className="rounded-full border border-ink px-8 py-4 font-bold text-ink">
+            Kontakt aufnehmen
+          </a>
         </div>
       </div>
     </section>
   );
 }
 
-function FooterColumn({ title, items }: { title: string; items: string[] }) {
-  return (
-    <div>
-      <h3 className="font-semibold text-white">{title}</h3>
-      <div className="mt-4 grid gap-3 text-sm">
-        {items.map((item) => (
-          <a key={item} href="#" className="hover:text-warm">{item}</a>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 function Footer() {
+  const footerServiceLinks = services.map((service) => ({
+    label: service.title,
+    href: service.href ?? "#leistungen"
+  }));
+
   return (
     <footer className="bg-[#07101d] py-14 text-slate-300">
       <div className="section-shell grid gap-10 md:grid-cols-2 lg:grid-cols-5">
@@ -586,9 +597,15 @@ function Footer() {
             <h2 className="text-2xl font-semibold text-white">HeuTec GmbH</h2>
           </div>
           <p className="mt-5 max-w-md leading-7">
-            Anbieter für Outdoor Energy Storage, LED-Beleuchtung, Großhandel und Full-Service-Projektlösungen.
+            Anbieter für Outdoor Energy Storage, LED-Beleuchtung, Großhandel und
+            Full-Service-Projektlösungen.
           </p>
           <div className="mt-6 space-y-2 text-sm leading-6">
+            <p>
+              Ludwig-Erhard-Straße 4
+              <br />
+              41564 Kaarst, Deutschland
+            </p>
             <p>Kontakt: info@heutec-gmbh.de · +49 2131 7529006</p>
             <p>Mo.-Fr., 9 - 17 Uhr</p>
             <p>Registergericht: Amtsgericht Neuss</p>
@@ -597,12 +614,40 @@ function Footer() {
             <p>EORI: DE515488647738399</p>
           </div>
         </div>
-        <FooterColumn title="Quick Links" items={["Unternehmen", "Referenzen", "FAQs", "Kontakt"]} />
-        <FooterColumn title="Produkte" items={productMenu} />
-        <FooterColumn title="Leistungen" items={[...serviceMenu, "Impressum", "Datenschutz", "AGB"]} />
+        <FooterColumn title="Quick Links" items={footerQuickLinks} />
+        <FooterColumn title="Produkte" items={footerProductLinks} />
+        <FooterColumn title="Leistungen" items={footerServiceLinks} />
       </div>
-      <div className="section-shell mt-10 border-t border-white/10 pt-6 text-sm">© 2026 HeuTec GmbH. Alle Rechte vorbehalten.</div>
+      <div className="section-shell mt-10 border-t border-white/10 pt-6 text-sm">
+        © 2026 HeuTec GmbH. Alle Rechte vorbehalten.
+      </div>
     </footer>
+  );
+}
+
+function FooterColumn({
+  title,
+  items
+}: {
+  title: string;
+  items: Array<string | { label: string; href: string }>;
+}) {
+  return (
+    <div>
+      <h3 className="font-semibold text-white">{title}</h3>
+      <div className="mt-4 grid gap-3 text-sm">
+        {items.map((item) => {
+          const label = typeof item === "string" ? item : item.label;
+          const href = typeof item === "string" ? "#" : item.href;
+
+          return (
+            <a key={label} href={href} className="hover:text-warm">
+              {label}
+            </a>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 
@@ -612,6 +657,7 @@ export default function Home() {
       <Header />
       <Hero />
       <LogoCarousel />
+
       <section id="loesungen" className="section-shell py-20 lg:py-28">
         <SectionHeader
           eyebrow="Full-Service-Projektmanagement"
@@ -619,9 +665,12 @@ export default function Home() {
           text="Wir verbinden Großhandelsprodukte mit technischer Beratung, Projektplanung, Lieferung, Installationskoordination und passenden Finanzierungsoptionen."
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {solutionCards.map((item, index) => <SolutionCard key={item.title} item={item} index={index} />)}
+          {solutionCards.map((item) => (
+            <SolutionCard key={item.title} item={item} />
+          ))}
         </div>
       </section>
+
       <section id="produkte" className="bg-mist py-20 lg:py-28">
         <div className="section-shell">
           <SectionHeader
@@ -630,24 +679,32 @@ export default function Home() {
             text="Wir liefern portable Energiespeicher und hochwertige LED-Leuchten für den gewerblichen Handel. Unser Sortiment verbindet zuverlässige Qualität, modernes Design und nachhaltige Anwendungsmöglichkeiten."
           />
           <div className="mt-12 grid gap-8 lg:grid-cols-2">
-            {productCategories.map((product) => <ProductCategoryCard key={product.title} product={product} />)}
+            {productCategories.map((product) => (
+              <ProductCategoryCard key={product.title} product={product} />
+            ))}
           </div>
         </div>
       </section>
+
       <section className="section-shell py-20 lg:py-28">
         <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <SectionHeader title="Warum moderne Energiespeicher- und LED-Lösungen?" />
             <p className="mt-6 text-lg leading-8 text-slate-600">
-              Outdoor Power Stations schaffen Unabhängigkeit und Backup-Sicherheit, LED reduziert Betriebskosten. Kombinierte Lösungen helfen Unternehmen, Effizienz, Nachhaltigkeit und Attraktivität im Retail- und Projektgeschäft zu verbessern.
+              Outdoor Power Stations schaffen Unabhängigkeit und Backup-Sicherheit,
+              LED reduziert Betriebskosten. Kombinierte Lösungen helfen Unternehmen, Effizienz,
+              Nachhaltigkeit und Attraktivität im Retail- und Projektgeschäft zu verbessern.
             </p>
           </div>
           <div className="grid gap-5 sm:grid-cols-2">
-            {benefits.map((benefit) => <BenefitCard key={benefit} title={benefit} />)}
+            {benefits.map((benefit) => (
+              <BenefitCard key={benefit.title} title={benefit.title} icon={benefit.icon} />
+            ))}
           </div>
         </div>
       </section>
-      <section className="bg-mist py-20 lg:py-28">
+
+      <section className="bg-mist py-14 lg:py-16">
         <div className="section-shell grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <SectionHeader
@@ -663,28 +720,45 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            <a href="#kontakt" className="mt-10 inline-flex rounded-full bg-signal px-8 py-4 font-bold text-white">Kostenfreie Erstberatung anfragen</a>
+            <a href="#kontakt" className="mt-10 inline-flex rounded-full bg-signal px-8 py-4 font-bold text-white">
+              Kostenfreie Erstberatung anfragen
+            </a>
           </div>
-          <PlaceholderImage alt="Bildplatzhalter für gewerbliche LED-Umrüstung in Lager, Büro oder Verkaufsfläche" className="min-h-[520px]" />
+          <img
+            src="/solution-backgrounds/energy-retrofit.jpg"
+            alt="Gewerbliche LED-Umrüstung in einer modernen Lager- und Gewerbefläche"
+            className="h-[clamp(360px,58vh,500px)] w-full rounded-[2rem] object-cover shadow-soft"
+          />
         </div>
       </section>
+
       <section id="referenzen" className="section-shell py-20 lg:py-28">
         <SectionHeader title="Praxisbeispiele für effiziente Lösungen" centered />
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {caseStudies.map((study) => <CaseStudyCard key={study.title} study={study} />)}
+          {caseStudies.map((study) => (
+            <CaseStudyCard key={study.title} study={study} />
+          ))}
         </div>
       </section>
+
       <section id="leistungen" className="bg-mist py-20 lg:py-28">
         <div className="section-shell">
           <SectionHeader title="Unsere Leistungen" text="Ein modularer Serviceansatz für Handel, Gewerbe, Industrie und langfristige Projektpartner." />
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {services.map((service, index) => <ServiceCard key={service.title} item={service} index={index} />)}
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => (
+              <ServiceCard key={service.title} item={service} />
+            ))}
           </div>
         </div>
       </section>
+
       <section id="unternehmen" className="section-shell py-20 lg:py-28">
         <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]">
-          <PlaceholderImage alt="Bildplatzhalter für professionelles Team bei Lichtplanung und Projektbesprechung" className="min-h-[520px]" />
+          <img
+            src="/solution-backgrounds/hand.png"
+            alt="Professionelle B2B-Partnerschaft und Projektbesprechung"
+            className="h-[clamp(360px,58vh,520px)] w-full rounded-[2rem] object-cover shadow-soft"
+          />
           <div>
             <SectionHeader title="Warum mit uns?" />
             <ul className="mt-8 grid gap-4">
@@ -698,64 +772,107 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-ink py-20 text-white lg:py-28"><div className="section-shell"><SectionHeader title="In 6 Schritten zur passenden Lösung" centered /><ProcessTimeline /></div></section>
-      <section className="section-shell py-20 lg:py-28">
-        <div className="rounded-[2.5rem] bg-mist p-6 sm:p-10">
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-            <div>
-              <SectionHeader title="Finanzierung für gewerbliche Projekte" />
-              <p className="mt-6 text-lg leading-8 text-slate-600">
-                Energieeffiziente Produkte und Modernisierungsprojekte müssen nicht immer sofort vollständig aus Eigenmitteln finanziert werden. Wir unterstützen gewerbliche Kunden bei passenden Finanzierungsmodellen, damit Investitionen in Energiespeicher und LED-Beleuchtung planbar und wirtschaftlich bleiben.
-              </p>
-              <a href="#kontakt" className="mt-8 inline-flex rounded-full bg-ink px-8 py-4 font-bold text-white">Finanzierungsmöglichkeiten besprechen</a>
-            </div>
-            <div className="grid gap-5 sm:grid-cols-2">
-              {financingCards.map((card) => <article key={card} className="rounded-[2rem] bg-white p-7 shadow-soft"><div className="mb-8 h-12 w-12 rounded-2xl bg-warm" /><h3 className="text-2xl font-semibold">{card}</h3></article>)}
-            </div>
-          </div>
+
+      <section
+        id="vision"
+        className="relative flex min-h-[360px] items-center overflow-hidden bg-ink bg-cover bg-center py-20 text-white lg:aspect-[1721/914] lg:min-h-0 lg:py-0"
+        style={{ backgroundImage: "url('/solution-backgrounds/vision.png')" }}
+      >
+        <div className="absolute inset-0 bg-ink/55" aria-hidden="true" />
+        <div className="section-shell relative z-10 [&_p]:text-slate-100">
+          <SectionHeader
+            title="Wo Licht ist, entstehen Wärme, Hoffnung und Zukunft."
+            text="Unsere Vision ist es, hochwertige und umweltfreundliche Produkte bereitzustellen, die Unternehmen helfen, Energie effizienter zu nutzen, Betriebskosten zu senken und nachhaltiger zu arbeiten."
+            centered
+          />
         </div>
       </section>
-      <section className="bg-mist py-20 lg:py-28">
-        <div className="section-shell">
-          <SectionHeader title="Unsere Vision: Umweltfreundliche Qualität" text="Unsere Vision ist es, hochwertige und umweltfreundliche Produkte bereitzustellen, die Unternehmen helfen, Energie effizienter zu nutzen, Betriebskosten zu senken und nachhaltiger zu arbeiten." centered />
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {sustainabilityPillars.map((pillar) => <article key={pillar} className="rounded-[2rem] bg-white p-8 text-center shadow-soft"><div className="mx-auto mb-7 h-16 w-16 rounded-full bg-signal/10" /><h3 className="text-2xl font-semibold">{pillar}</h3></article>)}
-          </div>
-        </div>
-      </section>
+
       <section className="section-shell py-20 lg:py-28">
         <SectionHeader title="Was Kunden an unserer Zusammenarbeit schätzen" centered />
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {testimonials.map((testimonial) => <article key={testimonial.role} className="rounded-[2rem] border border-line bg-white p-8 shadow-soft"><div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-warm font-black text-ink">“</div><p className="leading-8 text-slate-600">{testimonial.quote}</p><p className="mt-6 font-bold text-ink">{testimonial.role}</p></article>)}
+          {testimonials.map((testimonial, index) => (
+            <article key={testimonial.role} className="rounded-[2rem] border border-line bg-white p-8 shadow-soft">
+              <div className="mb-6 h-16 w-16 overflow-hidden rounded-full border border-line bg-mist shadow-sm">
+                <img
+                  src={`/solution-backgrounds/p${index + 1}.png`}
+                  alt={`${testimonial.role} Profilbild`}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <p className="leading-8 text-slate-600">{testimonial.quote}</p>
+              <p className="mt-6 font-bold text-ink">{testimonial.role}</p>
+            </article>
+          ))}
         </div>
       </section>
-      <section id="faqs" className="bg-mist py-20 lg:py-28"><div className="section-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr]"><div><SectionHeader title="Häufige Fragen" /></div><FAQAccordion /></div></section>
+
+      <section id="faqs" className="bg-mist py-20 lg:py-28">
+        <div className="section-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <SectionHeader title="Häufige Fragen" />
+          </div>
+          <FAQAccordion />
+        </div>
+      </section>
+
       <section id="kontakt">
         <CTASection />
         <div className="section-shell py-20 lg:py-28">
           <div className="grid gap-12 rounded-[2.5rem] bg-ink p-6 text-white sm:p-10 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
               <p className="eyebrow text-warm">Kontakt</p>
-              <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">Projektanfrage stellen</h2>
-              <p className="mt-6 text-lg leading-8 text-slate-300">Beschreiben Sie Ihr Vorhaben, Ihr Produktsortiment oder Ihr Modernisierungsprojekt. Wir melden uns mit einer ersten Einschätzung.</p>
+              <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+                Wie können wir helfen?
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-slate-300">
+                Beschreiben Sie Ihr Vorhaben, Ihr Produktsortiment oder Ihr
+                Modernisierungsprojekt. Wir melden uns mit einer ersten Einschätzung.
+              </p>
               <p className="mt-8 text-slate-300">E-Mail: info@heutec-gmbh.de</p>
             </div>
             <form className="grid gap-4 rounded-[2rem] bg-white p-6 text-ink sm:p-8">
-              <label className="sr-only" htmlFor="name">Name</label>
+              <label className="sr-only" htmlFor="name">
+                Name
+              </label>
               <input id="name" className="rounded-full border border-line px-5 py-4 outline-none focus:border-signal" placeholder="Name" />
-              <label className="sr-only" htmlFor="company">Unternehmen</label>
+              <label className="sr-only" htmlFor="company">
+                Unternehmen
+              </label>
               <input id="company" className="rounded-full border border-line px-5 py-4 outline-none focus:border-signal" placeholder="Unternehmen" />
-              <label className="sr-only" htmlFor="email">E-Mail</label>
-              <input id="email" type="email" className="rounded-full border border-line px-5 py-4 outline-none focus:border-signal" placeholder="E-Mail" />
-              <label className="sr-only" htmlFor="message">Nachricht</label>
-              <textarea id="message" rows={5} className="resize-none rounded-3xl border border-line px-5 py-4 outline-none focus:border-signal" placeholder="Nachricht" />
-              <button type="submit" className="rounded-full bg-warm px-8 py-4 font-bold text-ink">Anfrage senden</button>
+              <label className="sr-only" htmlFor="email">
+                E-Mail
+              </label>
+              <input
+                id="email"
+                type="email"
+                className="rounded-full border border-line px-5 py-4 outline-none focus:border-signal"
+                placeholder="E-Mail"
+              />
+              <label className="sr-only" htmlFor="message">
+                Nachricht
+              </label>
+              <textarea
+                id="message"
+                rows={5}
+                className="resize-none rounded-3xl border border-line px-5 py-4 outline-none focus:border-signal"
+                placeholder="Nachricht"
+              />
+              <button type="submit" className="rounded-full bg-warm px-8 py-4 font-bold text-ink">
+                Anfrage senden
+              </button>
             </form>
           </div>
         </div>
       </section>
+
       <Footer />
-      <a href="#kontakt" className="fixed bottom-5 right-5 z-50 hidden rounded-full bg-warm px-5 py-3 text-sm font-bold text-ink shadow-soft md:inline-flex">Projektanfrage stellen</a>
+      <a
+        href="#kontakt"
+        className="fixed bottom-5 right-5 z-50 hidden rounded-full bg-warm px-5 py-3 text-sm font-bold text-ink shadow-soft md:inline-flex"
+      >
+        Projektanfrage stellen
+      </a>
     </main>
   );
 }
